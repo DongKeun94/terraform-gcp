@@ -5,7 +5,7 @@ variable "project" {
 
 variable "region" {
   type    = string
-  default = ""
+  default = "asia-northeast3"
 }
 
 variable "zone" {
@@ -16,4 +16,15 @@ variable "zone" {
 variable "env" {
   type    = string
   default = "dev"
+}
+
+variable "github" {
+  type = string
+  default = "github"
+}
+
+
+variable "bastion" {
+  type = string
+  default = "bastion"
 }

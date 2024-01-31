@@ -5,7 +5,8 @@ resource "google_service_account" "viewer" {
 
 resource "google_project_iam_member" "viewer" {
   for_each = toset([
-    "viewer"
+    "viewer",
+    "artifactregistry.reader"
   ])
   project = var.project
   role    = "roles/${each.key}"

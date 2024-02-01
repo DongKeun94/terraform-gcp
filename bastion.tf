@@ -1,9 +1,6 @@
 resource "google_project_organization_policy" "vm_external_ip_access_policy" {
   project    = var.project
   constraint = "compute.vmExternalIpAccess"
-  provisioner "local-exec" {
-   command = "sleep 5"
-  }
 
   list_policy {
     allow {

@@ -21,10 +21,8 @@ resource "google_service_account_iam_binding" "devops" {
   service_account_id = google_service_account.devops.name
   role               = "roles/${each.key}"
   members = [
-    "user:dksung@tecacecloud.com"
-    ###"principal://iam.googleapis.com/projects/${var.project}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.github.id}/subject/assertion.sub"
+    "user:dksung@tecacecloud.com",
+    #"principal://iam.googleapis.com/projects/${var.project}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.github.id}/subject/assertion.sub"
   ]
-
-  depends_on = [ ]
 }
 

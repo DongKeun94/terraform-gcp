@@ -6,15 +6,14 @@ resource "google_artifact_registry_repository" "gi-repo" {
 }
 
 
-/*
+
 resource "google_iam_workload_identity_pool" "github" {
-  workload_identity_pool_id = "github-v3"
+  workload_identity_pool_id = "github-v5"
 }
 
 resource "google_iam_workload_identity_pool_provider" "github" {
-  project                            = var.project
   workload_identity_pool_id          = google_iam_workload_identity_pool.github.id
-  workload_identity_pool_provider_id = "github-v3"
+  workload_identity_pool_provider_id = "github-v5"
   attribute_mapping = {
     "google.subject"       = "assertion.sub"
     "attribute.actor"      = "assertion.actor"
@@ -24,4 +23,3 @@ resource "google_iam_workload_identity_pool_provider" "github" {
     issuer_uri = "https://token.actions.githubusercontent.com"
   }
 }
-*/
